@@ -29,7 +29,7 @@ class CreateFileResponseDict(TypedDict):
     """
     Описание структуры ответа создания файла.
     """
-    fiel: File
+    file: File
 
 
 class FilesClient(ApiClient):
