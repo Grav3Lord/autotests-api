@@ -3,7 +3,7 @@ from pydantic import BaseModel, Field, ConfigDict
 
 class ExerciseSchema(BaseModel):
     """
-    Описание структуры задания
+    Описание структуры задания.
     """
     model_config = ConfigDict(populate_by_name=True)
 
@@ -19,7 +19,7 @@ class ExerciseSchema(BaseModel):
 
 class GetExercisesResponseSchema(BaseModel):
     """
-    Описание структуры ответа получения заданий
+    Описание структуры ответа получения заданий.
     """
     exercises: list[ExerciseSchema]
 

@@ -9,9 +9,9 @@ public_users_client = get_public_users_client()
 create_user_request = CreateUserRequestSchema(
     email=get_random_email(),
     password="string",
-    lastName="string",
-    firstName="string",
-    middleName="string",
+    last_name="string",
+    first_name="string",
+    middle_name="string",
 )
 
 create_user_response = public_users_client.create_user(create_user_request)

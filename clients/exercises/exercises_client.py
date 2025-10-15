@@ -14,7 +14,6 @@ class ExercisesClient(APIClient):
     """
     Клиент для работы с /api/v1/exercises
     """
-
     def get_exercises_api(self, query: GetExercisesQuerySchema) -> Response:
         """
         Метод для получения списка упражнений.
