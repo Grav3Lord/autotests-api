@@ -4,12 +4,10 @@ from httpx import Client, URL, Response, QueryParams
 from httpx._types import RequestData, RequestFiles
 
 
-class ApiClient:
+class APIClient:
     def __init__(self, client: Client):
         """
-        Базовый API клиент, принимающий объект httpx.Client.
-
-        :param client: экземпляр httpx.Client для выполнения HTTP-запросов
+        note: ожидается установленный `base_url` у получаемого `client`
         """
         self.client = client
 
@@ -18,7 +16,7 @@ class ApiClient:
         Выполняет GET-запрос.
 
         :param url: URL-адрес эндпоинта.
-        :param params: Query-параметры запроса.
+        :param params: GET-параметры запроса (например, ?key=value).
         :return: Объект Response с данными ответа.
         """
         return self.client.get(url, params=params)
@@ -28,8 +26,8 @@ class ApiClient:
             url: URL | str,
             json: Any | None = None,
             data: RequestData | None = None,
-            files: RequestFiles | None = None,
-    ):
+            files: RequestFiles | None = None
+    ) -> Response:
         """
         Выполняет POST-запрос.
 
