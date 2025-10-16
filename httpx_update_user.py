@@ -1,10 +1,10 @@
 import httpx
 
-from tools.fakers import get_random_email
+from tools.fakers import fake
 from json import dumps
 
 create_user_payload = {
-    "email": get_random_email(),
+    "email": fake.email(),
     "password": "string",
     "lastName": "string",
     "firstName": "string",
@@ -37,7 +37,7 @@ with httpx.Client(base_url="http://localhost:8000/api/v1") as client:
     }
 
     update_user_payload = {
-        "email": get_random_email(),
+        "email": fake.email(),
         "lastName": "Tolstoj",
         "firstName": "Lev",
         "middleName": "Nikolaevich"
